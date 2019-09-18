@@ -9,7 +9,7 @@
         var vm = this;
 
         vm.roupa = '';
-        vm.createRoupa = createRoupa
+        vm.createRoupa = createRoupa;
 
         vm.title = 'Roupa:';
 

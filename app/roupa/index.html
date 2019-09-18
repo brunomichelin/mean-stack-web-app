@@ -4,9 +4,9 @@
 <!-- HEADER -->
 <div class="form-container">
     <form> 
-        <div class="questionForm">       
-            <div class="form-group inputQuestion">
-                <label for="question">Roupas</label>
+        <div class="roupaForm">       
+            <div class="form-group inputRoupa">
+                <label for="roupa">Roupas</label>
                 <input type="text" id="roupa" class="form-control" ng-model="vm.roupa" required />
             </div>        
             <div class="form-group">
@@ -19,9 +19,9 @@
 <!-- BODY -->
 <div class="panel panel-default">
     <div class="panel-body">
-        Questions
+        Roupas
     </div>
-    <ul class="list-group" ng-repeat="(key, value) in vm.questions">
+    <ul class="list-group" ng-repeat="(key, value) in vm.roupas">
         <li class="list-group-item">{{value.value}}</li>            
     </ul>
 </div>
