@@ -1,0 +1,27 @@
+﻿<h1>{{vm.title}}</h1>
+
+
+<!-- HEADER -->
+<div class="form-container">
+    <form> 
+        <div class="questionForm">       
+            <div class="form-group inputQuestion">
+                <label for="question">Roupas</label>
+                <input type="text" id="roupa" class="form-control" ng-model="vm.roupa" required />
+            </div>        
+            <div class="form-group">
+                <button class="btn btn-danger" ng-click="vm.createRoupa()">CRIAR</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- BODY -->
+<div class="panel panel-default">
+    <div class="panel-body">
+        Questions
+    </div>
+    <ul class="list-group" ng-repeat="(key, value) in vm.questions">
+        <li class="list-group-item">{{value.value}}</li>            
+    </ul>
+</div>
