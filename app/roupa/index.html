@@ -1,27 +1,66 @@
 ﻿<h1>{{vm.title}}</h1>
 
-
-<!-- HEADER -->
-<div class="form-container">
-    <form> 
-        <div class="roupaForm">       
-            <div class="form-group inputRoupa">
-                <label for="roupa">Roupas</label>
-                <input type="text" id="roupa" class="form-control" ng-model="vm.roupa" required />
-            </div>        
+<div id="pageBody">        
+    <div class="container">
+        Roupas: 
+        <ul ng-repeat="(key,product) in vm.productList">              
+            <li id="p{{product.code}}" ng-click="vm.getProduct(product.code)" class="prodItem">
+                <span class="prodCode">{{product.code}}</span> - <span class="prodInfo">{{product.type}}</span> by <span class="prodInfo">{{product.brand}}</span>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="container">
             <div class="form-group">
-                <button class="btn btn-danger" ng-click="vm.createRoupa()">CRIAR</button>
+                <label for="code">Codigo</label>
+                <input type="text" id="code" class="form-control clear" required disabled/>
+            </div>
+            <div class="form-group">
+                <label for="code">Data de Entrada</label>
+                <input type="date" id="date" class="form-control clear" required/>
+            </div>
+            <div class="form-group">
+                <label for="type">Tipo</label>
+                <input type="text" id="type" class="form-control clear" required/>
+            </div>
+            <div class="form-group">
+                <label for="brand"></label>
+                <input type="text" id="brand" class="form-control clear" required/>
+            </div>
+            <div class="form-group">
+                <label for="size">Tamanho</label>
+                <input type="text" id="size" class="form-control clear" required/>
+            </div>
+            <div class="form-group">
+                <label for="color">Cor</label>
+                <input type="text" id="color" class="form-control clear" required/>
+            </div>
+            <div class="form-group">
+                <label for="labelprice">Preço</label>
+                <input type="text" id="labelprice" class="form-control clear" required/>
+            </div>
+            <div class="form-group">
+                <label for="pricepaid">Preço Pago</label>
+                <input type="text" id="pricepaid" class="form-control clear" required/>
+            </div>
+            <div class="form-group">
+                <label for="marginprice">Margem de Lucro</label>
+                <input type="text" id="marginprice" class="form-control clear" disabled/>
+            </div>
+            <div class="form-group">
+                <label for="suggestedprice">Preço Sugerido</label>
+                <input type="text" id="suggestedprice" class="form-control clear" required/>
             </div>
         </div>
-    </form>
-</div>
-
-<!-- BODY -->
-<div class="panel panel-default">
-    <div class="panel-body">
-        Roupas
+        <div class="form-group">
+            <label for="charac">Características da Roupa</label>
+            <textarea type="text" rows="7" cols="100" id="charac" class="form-control clear form-control-big" required></textarea>
+        </div>
+        <br>
+        <div class="form-group"> 
+            <button class="btn btn-success" ng-click="vm.newProduct()">New</button>
+            <button class="btn btn-primary" ng-click="vm.saveProduct()">Save</button>
+            <button class="btn btn-danger" ng-click="vm.deleteProduct()">Delete</button>
+        </div>
     </div>
-    <ul class="list-group" ng-repeat="(key, value) in vm.roupas">
-        <li class="list-group-item">{{value.value}}</li>            
-    </ul>
 </div>
